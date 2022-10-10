@@ -36,6 +36,7 @@ function runApp() {
                     case 'Intern':
                     addIntern();
                     break;
+
                     default:
                     htmlBuilder()
             }
@@ -102,36 +103,37 @@ function addEngineer() {
         teamArray.push(engineer);
         createTeam();
     });
+}
 
-    function addIntern() {
-        inquirer.prompt([
-        {
-            type: 'input',
-            name: 'internName',
-            message: "What is the intern's name?"
-        },
-        {
-            type: 'input',
-            name: 'internId',
-            message: "What is the intern's employee ID?"
-        },
-        {
-            type: 'input',
-            name: 'internEmail',
-            message: "What is the intern's email?"
-        },
-        {
-            type: 'input',
-            name: 'internSchool',
-            message: "What is the intern's school?"
-        }
+function addIntern() {
+    inquirer.prompt([
+    {
+        type: 'input',
+        name: 'internName',
+        message: "What is the intern's name?"
+    },
+    {
+        type: 'input',
+        name: 'internId',
+        message: "What is the intern's employee ID?"
+    },
+    {
+        type: 'input',
+        name: 'internEmail',
+        message: "What is the intern's email?"
+    },
+    {
+        type: 'input',
+        name: 'internSchool',
+        message: "What is the intern's school?"
+    }
 
     ]).then(answers => {
-        const intern = new Intern(answers.internName, answers.interID, answers.internEmail, answers.internSchool);
-        teamArray.push(intern);
-        createTeam();
-    });
-    }
+    const intern = new Intern(answers.internName, answers.interID, answers.internEmail, answers.internSchool);
+    teamArray.push(intern);
+    createTeam();
+});
+    
 }
 
 function htmlBuilder() {
