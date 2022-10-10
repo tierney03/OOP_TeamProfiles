@@ -8,20 +8,23 @@ const intern = require('./lib/intern.js')
 const engineer = require('./lib/engineer.js')
 const OUTPUT_DIR = path.resolve(__dirname, 'output');
 const outputPath = path.join(OUTPUT_DIR, 'teamprofiles.html')
-const generateTeamProfiles = require('./src/template.js');
+const generateTeam = require('./src/template.js');
 const Manager = require('./lib/manager.js');
 const Engineer = require('./lib/engineer.js');
 const Intern = require('./lib/intern.js');
 
 //Array for team
 
+teamArray = [];
+
 function runApp() {
+
     function createTeam() {
-        inquirer.createPromptModule([{
+        inquirer.prompt([{
             type: 'list',
             message: 'What type of employee do you want to add to your team?',
             name: 'addEmployee',
-            options: ['Manager', 'Engineer', 'Intern', 'No more team members.']
+            choices: ['Manager', 'Engineer', 'Intern', 'No more team members.']
         }]) .then(function(userInput) {
             switch(userInput.addEmployee) {
                 case 'Manager':
@@ -38,7 +41,7 @@ function runApp() {
             }
         })
     }
-}
+
 
 // Adding team functions
 
@@ -137,5 +140,7 @@ function htmlBuilder() {
 }
 
 createTeam();
+
+}
 
 runApp()
