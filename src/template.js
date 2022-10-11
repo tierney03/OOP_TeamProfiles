@@ -7,7 +7,7 @@ const generateTeam = (team) => {
             <div class="card-body">
               <h5 class="card-title">${manager.getName()}</h5>
               <h6 class="card-subtitle mb-2 text-muted">${manager.getRole()}</h6>
-              <p class="card-text">ID: ${manager.getID()}</p>
+              <p class="card-text">ID: ${manager.getId()}</p>
               <p class="card-text">Email: <a href='mailto:${manager.getEmail()}'>${manager.getEmail()}</a></p>
               <p class="card-text">Office Number: ${manager.getOfficeNumber()}</p>
             </div>
@@ -20,8 +20,8 @@ const generateTeam = (team) => {
             <div class="card-body">
               <h5 class="card-title">${engineer.getName()}</h5>
               <h6 class="card-subtitle mb-2 text-muted">${engineer.getRole()}</h6>
-              <p class="card-text">ID: ${engineer.getID()}</p>
-              <p class="card-text">Email: <a href='mailto:${engineer.getEmail()}'>${manager.getEmail()}</a></p>
+              <p class="card-text">ID: ${engineer.getId()}</p>
+              <p class="card-text">Email: <a href='mailto:${engineer.getEmail()}'>${engineer.getEmail()}</a></p>
               <p class="card-text">GitHub: <a href='https://github.com/${engineer.getGithub()}' taget='_blank'>${engineer.getGithub()}</a></p>
             </div>
           </div>`;
@@ -33,7 +33,7 @@ const generateTeam = (team) => {
             <div class="card-body">
               <h5 class="card-title">${intern.getName()}</h5>
               <h6 class="card-subtitle mb-2 text-muted">${intern.getRole()}</h6>
-              <p class="card-text">ID: ${intern.getID()}</p>
+              <p class="card-text">ID: ${intern.getId()}</p>
               <p class="card-text">Email: <a href='mailto:${intern.getEmail()}'>${intern.getEmail()}</a></p>
               <p class="card-text">School: ${intern.getSchool}</p>
             </div>
@@ -44,7 +44,7 @@ const generateTeam = (team) => {
     
     html.push(team
         .filter(employee => employee.getRole() === 'Manager')
-        .map(engineer => generateManager(manager))
+        .map(manager => generateManager(manager))
         );
     html.push(team
         .filter(employee => employee.getRole() === 'Engineer')
@@ -53,7 +53,7 @@ const generateTeam = (team) => {
         );
     html.push(team
         .filter(employee => employee.getRole() === 'Intern')
-        .map(engineer => generateIntern(intern))
+        .map(intern => generateIntern(intern))
         .join('')
         );
 
