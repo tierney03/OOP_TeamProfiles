@@ -99,7 +99,7 @@ function addEngineer() {
             message: "What is the engineer's GitHub username?"
         }
     ]).then(answers => {
-        const engineer = new Engineer(answers.engineerName, answers.engineerID, answers.engineerEmail, answers.engineerGithub);
+        const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
         teamArray.push(engineer);
         createTeam();
     });
@@ -129,7 +129,7 @@ function addIntern() {
     }
 
     ]).then(answers => {
-    const intern = new Intern(answers.internName, answers.interID, answers.internEmail, answers.internSchool);
+    const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
     teamArray.push(intern);
     createTeam();
 });

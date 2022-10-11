@@ -35,7 +35,7 @@ const generateTeam = (team) => {
               <h6 class="card-subtitle mb-2 text-muted">${intern.getRole()}</h6>
               <p class="card-text">ID: ${intern.getId()}</p>
               <p class="card-text">Email: <a href='mailto:${intern.getEmail()}'>${intern.getEmail()}</a></p>
-              <p class="card-text">School: ${intern.getSchool}</p>
+              <p class="card-text">School: ${intern.getSchool()}</p>
             </div>
           </div>`;
     };
