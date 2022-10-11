@@ -137,7 +137,7 @@ function addIntern() {
 }
 
 function htmlBuilder() {
-    console.log('Team Created!')
+    console.log('Team has been created!')
     fs.writeFileSync(outputPath, generateTeam(teamArray), 'UTF-8')
 }
 
