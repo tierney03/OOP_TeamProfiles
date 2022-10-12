@@ -19,6 +19,7 @@
   "homepage": "https://github.com/tierney03/OOP_TeamProfiles#readme",
   "dependencies": {
     "express": "^4.18.1",
-    "inquirer": "^8.2.4"
+    "inquirer": "^8.2.4",
+    "jest": "^29.1.2"
   }
 }
